@@ -32,7 +32,7 @@ import com.google.api.services.drive.model.FileList;
  * @author eTouch
  *
  */
-public class GoogleDriveService {
+public class GoogleDriveService2 {
 	
 	private static final String EXCEL_FILE_NAME = "etouch.quarterdata.excel.file.name";
 	
@@ -88,7 +88,7 @@ public class GoogleDriveService {
 	 */
 	public static Credential authorize() throws IOException {
 		// Load client secrets.
-		InputStream in = GoogleDriveService.class.getResourceAsStream("/client_secret.json");
+		InputStream in = GoogleDriveService2.class.getResourceAsStream("/client_secret.json");
 		GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(in));
 
 		// Build flow and trigger user authorization request.
@@ -153,7 +153,7 @@ public class GoogleDriveService {
 		Drive service = getDriveService();
 
 		Properties p = new Properties();
-		p.load(GoogleDriveService.class.getResourceAsStream(APPLICATION_PROPERTIES));
+		p.load(GoogleDriveService2.class.getResourceAsStream(APPLICATION_PROPERTIES));
 		
 		String localFileName = p.getProperty(EXCEL_FILE_NAME);
 		String fileId = p.getProperty(GOOGLE_FILE_ID);
